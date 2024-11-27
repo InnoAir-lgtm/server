@@ -1,0 +1,9 @@
+POST http://localhost:3000/cadastrar-papeis 
+Content-Type: application/json
+
+{
+  "papel": "TESTE DE N.157",
+  "permissoes": [12, 11 ]
+}
+
+###
