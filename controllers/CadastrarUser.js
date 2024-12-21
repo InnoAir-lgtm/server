@@ -21,3 +21,6 @@ async function cadastrarUsuario(dados, supabase) {
 }
 
 module.exports = { cadastrarUsuario }
+
+
+

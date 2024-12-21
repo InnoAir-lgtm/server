@@ -2,8 +2,45 @@ POST http://localhost:3000/cadastrar-papeis
 Content-Type: application/json
 
 {
-  "papel": "TESTE DE N.157",
-  "permissoes": [12, 11 ]
+    "papel": "TESTE DE N.157",
+    "permissoes": [
+        12,
+        11
+    ]
 }
 
 ###
+
+POST http://localhost:3000/cadastrar-endereco 
+Content-Type: application/json
+
+{
+    "cep": "7234143",
+    "logradouro": "Rua x-23",
+    "bairro": "Tocantins",
+    "cidade": "Goiania",
+    "estado": "GO"
+}
+
+###
+
+POST http://localhost:3000/associar-endereco 
+Content-Type: application/json
+
+{
+                "pes_id": 4,
+                "epe_numero":"12",
+                "epe_complemento":"Qd.10 Çt.12",
+                "epe_tipo": "Residencial",
+                "end_cep": 74470150,
+                "epe_latitude": "-4512",
+                "epe_longitude": "-1524"
+}
+
+###
+GET http://localhost:3000/listar-contatos-pessoa
+Content-Type: application/json
+
+{
+    
+}
