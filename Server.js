@@ -15,14 +15,17 @@ require('dotenv').config();
 app.use(express.json());
 
 
-// CORS
 const corsOptions = {
-    origin: 'http://localhost:5173',
+    origin: [
+        'http://localhost:5173', // Desenvolvimento local
+        'https://innoair-github-io-nktw.vercel.app', // Produção no Vercel
+    ],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
 };
-app.options('*', cors(corsOptions));
+
+app.options('*', cors(corsOptions)); // Configuração para pré-solicitações (OPTIONS)
 app.use(cors(corsOptions));
 
 
@@ -482,7 +485,7 @@ app.get('/listar-associacoes/:usr_id', async (req, res) => {
             .from('pap_usr_emp')
             .select('pap_id, emp_cnpj, empresas(emp_nome)')
             .eq('usr_id', usr_id);
-       if (error) throw error;
+        if (error) throw error;
 
         res.status(200).json(data);
     } catch (error) {
